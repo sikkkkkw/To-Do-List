@@ -1,0 +1,90 @@
+*{
+    margin: 0; padding: 0;
+}
+body{
+    position: relative;
+    height: 1200px;
+    width: 1080px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 800px;
+    height: 20px;
+    border: 1px solid black;
+    
+}
+form{
+    width: 500px;
+    margin: auto;
+    padding: 40px;
+}
+input{
+    width: 100%;
+    padding: 10px 10px; 
+    background-color: beige;
+}
+ul{
+    list-style: none;
+    padding: 0 200px;
+}
+.clock-cintainer{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clock{
+    font-size: 40px;
+    font-weight: 700;
+}
+.rand-image-container{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.rand-image-container #rand-image{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.rand-image-container #rand-image::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.rand-image-container #rand-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#quotes{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%); /* 옮기는거 중앙정렬 */
+    font-weight: 700;
+    color: #ffffff;
+}
+#todoul .completed {
+    text-decoration: line-through;
+    color: #888;
+}
+/* 시간 */
+.time {
+    float: right;
+    margin-left: 10px;
+    color: #888;
+}
+.weatherImg{
+    width: 35px;
+    height: 35px;
+}

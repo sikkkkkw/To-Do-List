@@ -1,6 +1,7 @@
 const ToDoForm=document.querySelector("#todoform");
 const ToDoInput =document.querySelector("#todoinput");
 const ToDoUl = document.querySelector("#todoul");
+
 let toDos=[];
 
 // 로컬 스토리지에 저장
@@ -21,16 +22,20 @@ function deleteToDo(deevent){
 function paintToDo(newToDo){
     const li = document.createElement("li");
     const span = document.createElement("span");
+    const dateTimeSpan = document.createElement("span");
     const button = document.createElement("button");
     button.innerText = "❌";
+    li.classList.add("text");
     //삭제
     button.addEventListener("click",deleteToDo);
     // ---------------------
     span.innerText = newToDo;
+    dateTimeSpan.innerText=getCurrentDateTime();
+    dateTimeSpan.classList.add("time");
     li.appendChild(button);
     li.appendChild(span);
+    li.appendChild(dateTimeSpan);
     ToDoUl.appendChild(li);
-
 }
 
 function handleToDoSubmit(event){
@@ -56,6 +61,18 @@ function handleToDoSubmit(event){
     }
     ToDoInput.value = "";
 }
+// 현재 날짜 및 시간을 반환하는 함수
+function getCurrentDateTime() {
+    const now = new Date();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const dateTimeString = `${month}/${day} ${hours}:${minutes}`;
+
+    return dateTimeString;
+}
+
 ToDoForm.addEventListener("submit",handleToDoSubmit);
 // 로컬 스토리지에 저장된 값 가져오기
 const savedToDos = localStorage.getItem("todos");
@@ -67,3 +84,4 @@ if(savedToDos !== null){
     toDos = parsedToDos;
     toDos.forEach(paintToDo);
 }
+

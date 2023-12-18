@@ -3,39 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>To Do List</title>
-    <style>
-        *{
-            margin: 0; padding: 0;
-        }
-        body{
-            position: relative;
-            height: 1200px;
-            width: 1080px;
-            margin: 0 auto;
-            border: 1px solid black;
-        }
-        form{
-            width: 500px;
-            margin: auto;
-            padding: 40px;
-        }
-        input{
-            width: 100%;
-            padding: 10px 10px; 
-            background-color: beige;
-        }
-        ul{
-            list-style: none;
-            padding: 0 200px;
-        }
-    </style>
 </head>
 <body>
+    <div class="clock-cintainer">
+        <div id="clock"></div>
+        <div class="weather=container">
+            <div id="weather"></div>
+        </div>
+    </div>
     <form id="todoform" >
         <input type="text" id="todoinput" placeholder="할일을 입력해 주세요."/>
     </form>
     <ul id="todoul"></ul>
+    <div class="rand-image-container">
+        <div id="rand-image"></div>
+        <div id="quotes"></div>
+    </div>
     <script src="ToDo.js"></script>
+    <script src="clock.js"></script>
+    <script src="randimage.js"></script>
+    <script src="quotes.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
