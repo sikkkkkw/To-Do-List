@@ -29,15 +29,15 @@ function onGeoSuccess(position) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
   fetch(url)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       console.log(data);
       const weatherElement = document.querySelector("#weather");
       const weatherDescription = data.weather[0].main;
       const temperature = data.main.temp;
 
       // 날씨 텍스트 업데이트
-    //   weatherElement.innerText = `${weatherDescription} ${temperature}°C`;
+      //   weatherElement.innerText = `${weatherDescription} ${temperature}°C`;
 
       // 날씨 상태에 따라 이미지 업데이트
       const weatherImage = document.createElement("img");

@@ -31,6 +31,9 @@ ul{
     list-style: none;
     padding: 0 200px;
 }
+li{
+    margin: 10px;
+}
 .clock-cintainer{
     width: 100%;
     height: 200px;
@@ -87,4 +90,8 @@ ul{
 .weatherImg{
     width: 35px;
     height: 35px;
+}
+
+.dragging{
+    opacity: 0.1;
 }
